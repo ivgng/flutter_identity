@@ -46,6 +46,7 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
+    - assets/images/mercenary.jpg
     - assets/images/garden.jpg
     - assets/images/logo.png
 
@@ -64,8 +65,11 @@ flutter:
     - family: Poppins
       fonts:
         - asset: assets/fonts/Poppins-Light.ttf
+          weight: 300
         - asset: assets/fonts/Poppins-Regular.ttf
+          weight: 500
         - asset: assets/fonts/Poppins-SemiBold.ttf
+          weight: 700
   #         style: italic
   #   - family: Trajan Pro
   #     fonts:
