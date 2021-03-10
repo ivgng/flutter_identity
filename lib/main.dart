@@ -42,9 +42,23 @@ class MyApp extends StatelessWidget {
                   children: <Widget>[
                     Column(
                       children: <Widget>[
-                        Image(
-                          image: AssetImage('assets/images/garden.jpg'),
-                          height: 200,
+                        ClipRRect(
+                          borderRadius: BorderRadius.circular(15),
+                          child: Image(
+                            image: AssetImage('assets/images/garden.jpg'),
+                            height: 200,
+                          ),
+                        ),
+                        Padding(
+                          padding: EdgeInsets.only(
+                              top: 5.0, bottom: 5.0, left: 10.0),
+                        ),
+                        ClipRRect(
+                          borderRadius: BorderRadius.circular(15),
+                          child: Image(
+                            image: AssetImage('assets/images/mercenary.jpg'),
+                            height: 200,
+                          ),
                         ),
                       ],
                     ),
@@ -55,6 +69,10 @@ class MyApp extends StatelessWidget {
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
+                        Padding(
+                          padding: EdgeInsets.only(
+                              top: 5.0, bottom: 5.0, left: 10.0),
+                        ),
                         Text(
                           "Gardener",
                           style: titleImage,
@@ -100,10 +118,90 @@ class MyApp extends StatelessWidget {
                           style: subtitleImage,
                           textAlign: TextAlign.left,
                         ),
+                        OutlineButton(
+                          child: new Text("Gallery Emma"),
+                          borderSide: BorderSide(
+                            color: Colors.blueGrey,
+                          ),
+                          onPressed: () {
+                            print("Emma Gallery");
+                          },
+                        ),
+                        Padding(
+                          padding: EdgeInsets.only(
+                              top: 20.0, bottom: 5.0, left: 10.0),
+                        ),
+                        Text(
+                          "Mercenary",
+                          style: titleImage,
+                          textAlign: TextAlign.left,
+                        ),
+                        Text(
+                          "Name : Naib Subedar",
+                          style: subtitleImage,
+                          textAlign: TextAlign.left,
+                        ),
+                        Text(
+                          "Gender : Male",
+                          style: subtitleImage,
+                          textAlign: TextAlign.left,
+                        ),
+                        Text(
+                          "Birthday : July 23",
+                          style: subtitleImage,
+                          textAlign: TextAlign.left,
+                        ),
+                        Text(
+                          "Age : 27",
+                          style: subtitleImage,
+                          textAlign: TextAlign.left,
+                        ),
+                        Text(
+                          "Likes : Scimitars, moonlit nights",
+                          style: subtitleImage,
+                          textAlign: TextAlign.left,
+                        ),
+                        Text(
+                          "Dislikes : Wild boars",
+                          style: subtitleImage,
+                          textAlign: TextAlign.left,
+                        ),
+                        Text(
+                          "Role : Rescue, Contain",
+                          style: subtitleImage,
+                          textAlign: TextAlign.left,
+                        ),
+                        Text(
+                          "Voice Actor : Li Yuantao",
+                          style: subtitleImage,
+                          textAlign: TextAlign.left,
+                        ),
+                        OutlineButton(
+                          child: new Text("Gallery Naib"),
+                          borderSide: BorderSide(
+                            color: Colors.blueGrey,
+                          ),
+                          onPressed: () {
+                            print("Naib Gallery");
+                          },
+                        ),
                       ],
                     ),
                   ],
                 ))),
+        bottomNavigationBar: BottomNavigationBar(
+          items: const <BottomNavigationBarItem>[
+            BottomNavigationBarItem(
+              icon: Icon(Icons.people),
+              label: 'Survivor',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.hardware),
+              label: 'Hunter',
+            ),
+          ],
+          selectedItemColor: Colors.red,
+        ),
       ),
     );
   }
