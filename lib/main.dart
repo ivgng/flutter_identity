@@ -3,7 +3,10 @@ import 'font_style.dart';
 import 'custom_colors.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(MaterialApp(
+    home: MyApp(),
+    debugShowCheckedModeBanner: false,
+  ));
 }
 
 class MyApp extends StatelessWidget {
@@ -30,7 +33,7 @@ class MyApp extends StatelessWidget {
             IconButton(icon: Icon(Icons.info_outline), onPressed: () {})
           ],
         ),
-        body: SafeArea(
+        body: SingleChildScrollView(
             child: Container(
                 margin: EdgeInsets.only(
                     left: 10.0, top: 5.0, right: 10.0, bottom: 10.0),
@@ -57,6 +60,17 @@ class MyApp extends StatelessWidget {
                           borderRadius: BorderRadius.circular(15),
                           child: Image(
                             image: AssetImage('assets/images/mercenary.jpg'),
+                            height: 200,
+                          ),
+                        ),
+                        Padding(
+                          padding: EdgeInsets.only(
+                              top: 5.0, bottom: 5.0, left: 10.0),
+                        ),
+                        ClipRRect(
+                          borderRadius: BorderRadius.circular(15),
+                          child: Image(
+                            image: AssetImage('assets/images/seer.jpg'),
                             height: 200,
                           ),
                         ),
@@ -118,18 +132,23 @@ class MyApp extends StatelessWidget {
                           style: subtitleImage,
                           textAlign: TextAlign.left,
                         ),
-                        OutlineButton(
-                          child: new Text("Gallery Emma"),
-                          borderSide: BorderSide(
-                            color: Colors.blueGrey,
+                        ElevatedButton(
+                          child: Text('Gallery Emma'),
+                          style: ElevatedButton.styleFrom(
+                            primary: Colors.blueGrey, // background
+                            onPrimary: Colors.white, // foreground
                           ),
                           onPressed: () {
-                            print("Emma Gallery");
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => EmmaRoute()),
+                            );
                           },
                         ),
                         Padding(
                           padding: EdgeInsets.only(
-                              top: 20.0, bottom: 5.0, left: 10.0),
+                              top: 15.0, bottom: 5.0, left: 10.0),
                         ),
                         Text(
                           "Mercenary",
@@ -185,6 +204,64 @@ class MyApp extends StatelessWidget {
                             print("Naib Gallery");
                           },
                         ),
+                        Padding(
+                          padding: EdgeInsets.only(
+                              top: 15.0, bottom: 5.0, left: 10.0),
+                        ),
+                        Text(
+                          "Seer",
+                          style: titleImage,
+                          textAlign: TextAlign.left,
+                        ),
+                        Text(
+                          "Name : Eli Clark",
+                          style: subtitleImage,
+                          textAlign: TextAlign.left,
+                        ),
+                        Text(
+                          "Gender : Male",
+                          style: subtitleImage,
+                          textAlign: TextAlign.left,
+                        ),
+                        Text(
+                          "Birthday : October 31",
+                          style: subtitleImage,
+                          textAlign: TextAlign.left,
+                        ),
+                        Text(
+                          "Age : 21",
+                          style: subtitleImage,
+                          textAlign: TextAlign.left,
+                        ),
+                        Text(
+                          "Likes : Bird, poultry",
+                          style: subtitleImage,
+                          textAlign: TextAlign.left,
+                        ),
+                        Text(
+                          "Dislikes : Wild boars",
+                          style: subtitleImage,
+                          textAlign: TextAlign.left,
+                        ),
+                        Text(
+                          "Role : Businesspeople, Merchants",
+                          style: subtitleImage,
+                          textAlign: TextAlign.left,
+                        ),
+                        Text(
+                          "Voice Actor : Meng Xianglong",
+                          style: subtitleImage,
+                          textAlign: TextAlign.left,
+                        ),
+                        OutlineButton(
+                          child: new Text("Gallery Eli"),
+                          borderSide: BorderSide(
+                            color: Colors.blueGrey,
+                          ),
+                          onPressed: () {
+                            print("Eli Gallery");
+                          },
+                        ),
                       ],
                     ),
                   ],
@@ -203,6 +280,110 @@ class MyApp extends StatelessWidget {
           selectedItemColor: Colors.red,
         ),
       ),
+    );
+  }
+}
+
+class EmmaRoute extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Image.asset(
+          'assets/images/logo.png',
+          fit: BoxFit.contain,
+          height: 60,
+        ),
+        backgroundColor: darkBlue,
+      ),
+      body: SingleChildScrollView(
+          child: Container(
+              margin: EdgeInsets.only(
+                  left: 10.0, top: 5.0, right: 10.0, bottom: 10.0),
+              padding: EdgeInsets.only(
+                  left: 10.0, top: 5.0, right: 10.0, bottom: 10.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
+                  Padding(
+                    padding: EdgeInsets.only(
+                        top: 5.0, bottom: 5.0, left: 0.0, right: 10.0),
+                  ),
+                  Column(
+                    children: <Widget>[
+                      Padding(
+                        padding: EdgeInsets.only(top: 5.0, bottom: 5.0),
+                      ),
+                      ClipRRect(
+                        borderRadius: BorderRadius.circular(15),
+                        child: Image(
+                          image: AssetImage('assets/images/garden.jpg'),
+                          height: 210,
+                        ),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.only(top: 5.0, bottom: 5.0),
+                      ),
+                      ClipRRect(
+                        borderRadius: BorderRadius.circular(15),
+                        child: Image(
+                          image: AssetImage('assets/images/garden2.jpg'),
+                          height: 210,
+                        ),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.only(top: 5.0, bottom: 5.0),
+                      ),
+                      ClipRRect(
+                        borderRadius: BorderRadius.circular(15),
+                        child: Image(
+                          image: AssetImage('assets/images/garden3.jpg'),
+                          height: 210,
+                        ),
+                      ),
+                    ],
+                  ),
+                  Padding(
+                    padding: EdgeInsets.only(
+                        top: 5.0, bottom: 5.0, left: 5.0, right: 10.0),
+                  ),
+                  Column(
+                    children: <Widget>[
+                      Padding(
+                        padding: EdgeInsets.only(top: 5.0, bottom: 5.0),
+                      ),
+                      ClipRRect(
+                        borderRadius: BorderRadius.circular(15),
+                        child: Image(
+                          image: AssetImage('assets/images/garden4.jpg'),
+                          height: 210,
+                        ),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.only(top: 5.0, bottom: 5.0),
+                      ),
+                      ClipRRect(
+                        borderRadius: BorderRadius.circular(15),
+                        child: Image(
+                          image: AssetImage('assets/images/garden5.jpg'),
+                          height: 210,
+                        ),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.only(top: 5.0, bottom: 5.0),
+                      ),
+                      ClipRRect(
+                        borderRadius: BorderRadius.circular(15),
+                        child: Image(
+                          image: AssetImage('assets/images/garden6.jpg'),
+                          height: 210,
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ))),
     );
   }
 }
